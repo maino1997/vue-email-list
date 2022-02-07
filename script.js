@@ -18,14 +18,15 @@ const app = new Vue({
                 if (!this.mailList.includes(mail)) {
                     this.mailList.push(mail);
                 }
+
+                if (this.mailList.length < 10) this.getRandomMail();
                 // }
 
             })
         }
     },
     created() {
-        for (let i = 0; i < this.maxMail; i++) {
-            this.getRandomMail();
-        }
+
+        this.getRandomMail();
     }
 })
